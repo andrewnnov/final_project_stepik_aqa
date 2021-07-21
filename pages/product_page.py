@@ -47,12 +47,18 @@ class ProductPage(BasePage):
         assert price_current_product_text == added_product_price, "Current price in not equal price in basket"
 
 
-
     def click_to_add_to_basket_button(self):
         add_to_basket_btn = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         add_to_basket_btn.click()
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_CURRENT_PRODUCT), \
+            "Success message is presented, but should not be"
 
+
+    def should_be_element_is_disappeared_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_CURRENT_PRODUCT), \
+            "Success message is presented, but should not be"
 
 
 
