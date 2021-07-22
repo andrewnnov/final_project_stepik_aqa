@@ -20,3 +20,7 @@ class ProductPageLocators():
     PRICE_OF_CURRENT_PRODUCT =(By.XPATH, "//div[@class='col-sm-6 product_main']/p[@class='price_color']")
     PRICE_OF_ADDED_PRODUCT = (By.XPATH, "//div[@class='alertinner ']/p/strong")
 
+
+class ProductPageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
