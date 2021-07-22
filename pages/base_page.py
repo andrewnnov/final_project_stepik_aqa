@@ -1,5 +1,6 @@
 import math
 from .locators import ProductPageLocators
+from .locators import MainPageLocators
 
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
@@ -27,6 +28,12 @@ class BasePage():
         login_link = self.browser.find_element(*ProductPageLocators.LOGIN_LINK)
         login_link.click()
         assert self.is_element_present(*ProductPageLocators.LOGIN_LINK), "Login link is not presented"
+
+
+    def go_to_basket_page(self):
+        view_basket_link = self.browser.find_element(*MainPageLocators.VIEW_BASKET_LINK)
+        view_basket_link.click()
+        assert self.is_not_element_present(*MainPageLocators.VIEW_BASKET_LINK), "Basket link is presented"
 
 
     def should_be_login_link(self):
