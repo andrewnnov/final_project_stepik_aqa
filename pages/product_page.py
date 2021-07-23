@@ -12,7 +12,6 @@ class ProductPage(BasePage):
         self.should_be_add_to_basket_button()
 
 
-
     def should_be_product_description(self):
 
         assert self.is_element_present(*ProductPageLocators.PRODUCT_DESCRIPTION), "Product description is not presented"

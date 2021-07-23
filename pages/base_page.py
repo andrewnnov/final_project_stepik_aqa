@@ -1,5 +1,5 @@
 import math
-from .locators import ProductPageLocators
+from .locators import ProductPageLocators, BasePageLocators
 from .locators import MainPageLocators
 
 from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
@@ -68,3 +68,11 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
+
+
+
+
